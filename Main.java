@@ -22,9 +22,7 @@ class SimpleCalculator implements Calculator {
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.print("첫 숫자를 입력하세요: ");
         int a = sc.nextInt();
-        System.out.print("마지막 숫자를 입력하세요: ");
         int b = sc.nextInt();
         SimpleCalculator calc = new SimpleCalculator();
 
