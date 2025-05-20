@@ -1,0 +1,36 @@
+import java.util.Scanner;
+
+interface Calculator{
+    int add(int a, int b);
+
+    default int multiply(int a, int b) {
+        return a * b;
+    }
+    
+    static int substract(int a, int b) {
+        return a - b;
+    }
+}
+
+class SimpleCalculator implements Calculator {
+    @Override
+    public int add(int a, int b) {
+        return a + b;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("첫 숫자를 입력하세요: ");
+        int a = sc.nextInt();
+        System.out.print("마지막 숫자를 입력하세요: ");
+        int b = sc.nextInt();
+        SimpleCalculator calc = new SimpleCalculator();
+
+        System.out.println(calc.add(a, b));
+        System.out.println(calc.multiply(a, b));
+        System.out.println(Calculator.substract(a, b));
+        sc.close();
+    }
+}
